@@ -5,7 +5,7 @@ public class PlayerCollisions : MonoBehaviour
     // Door Animator
     [SerializeField] private GameObject door; // An open slo in the Inspector to drag the hinge object into 
 
-    Animator doorAnimator;
+    private Animator doorAnimator;
 
     // Door timer
     [Header("Door timer")]
@@ -13,10 +13,18 @@ public class PlayerCollisions : MonoBehaviour
     private float doorTimer = 0.0f;
     [SerializeField] private float doorOpenTime = 3.0f;
 
+    //Door sounds
+    [SerializeField] private AudioClip doorOpenSound;
+    [SerializeField] private AudioClip doorShutSound;
+    private new AudioSource audio; // Will hold the AudioSource Component
+
+    private bool doorIsOpen = false; // To determine current state of door
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         doorAnimator = door.GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,6 +59,14 @@ public class PlayerCollisions : MonoBehaviour
     // Custom open door method
     private void OpenDoor()
     {
+       if(doorIsOpen)
+       {
+            audio.PlayOneShot(doorOpenSound);
+
+            doorIsOpen = true;
+       }
+        
+
         // Set Animator parameters
         doorAnimator.SetBool("doorOpen", true);
 
@@ -60,6 +76,13 @@ public class PlayerCollisions : MonoBehaviour
     // Custom shut door method
     private void ShutDoor()
     {
+        if(doorIsOpen)
+       {
+            audio.PlayOneShot(doorShutSound);
+
+            doorIsOpen = false;
+       }
+
         // Set Animator parameters
         doorAnimator.SetBool("doorOpen", false);
     }
