@@ -434,8 +434,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.14621818
-  far clip plane: 29243.637
+  near clip plane: 0.4210187
+  far clip plane: 84203.74
   field of view: 60.000004
   orthographic: 0
   orthographic size: 5
@@ -444,7 +444,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 655745532}
+  m_TargetTexture: {fileID: 1651946019}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -462,8 +462,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595042265}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.97404873, y: 0, z: -0.07775936, w: 0.21256214}
-  m_LocalPosition: {x: 197.16399, y: 83.561554, z: 24.427073}
+  m_LocalRotation: {x: -0.3585539, y: 0, z: 0.67192405, w: 0.64804107}
+  m_LocalPosition: {x: 398.43106, y: 34.526733, z: 130.28946}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -526,43 +526,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfecd18fe8e55784ba3ed2424790d4d2, type: 3}
---- !u!84 &655745532
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: OptiWaterPlanarReflectionRT
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1001 &746329221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -724,6 +687,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b61e98e4b9eda4a855f7a5dff4905c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupCollect
+  pickup1tex: {fileID: 0}
+  pickup2tex: {fileID: 0}
+  pickup3tex: {fileID: 0}
+  pickup4tex: {fileID: 0}
+  pickup0tex: {fileID: 0}
 --- !u!1 &795346341
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +808,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b61e98e4b9eda4a855f7a5dff4905c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupCollect
+  pickup1tex: {fileID: 2800000, guid: 1722f7b7a1427446c82c18ca8eea179b, type: 3}
+  pickup2tex: {fileID: 2800000, guid: 2b935da67c4214640be7bb935073c6e1, type: 3}
+  pickup3tex: {fileID: 2800000, guid: 5dafa6a4ad3a142e0b20f6a25d69aaad, type: 3}
+  pickup4tex: {fileID: 2800000, guid: fb837420ad314429c9fd7e00cd0f3b29, type: 3}
+  pickup0tex: {fileID: 2800000, guid: ba7851f276e57489f835fbb62d09e2f8, type: 3}
 --- !u!1 &874605735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1352,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501720943}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &1651946019
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: OptiWaterPlanarReflectionRT
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 6
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1001 &1746088926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2203,6 +2213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88665aa368b7274fac1859bd00b3b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PllayerCollisions
+  pickupCollectSound: {fileID: 8300000, guid: 66640ea0c7a104665b27f562d014d7cf, type: 3}
   door: {fileID: 407667678}
   doorOpenTime: 3
   doorOpenSound: {fileID: 8300000, guid: a7a46655edb681147879b7107429f76e, type: 3}

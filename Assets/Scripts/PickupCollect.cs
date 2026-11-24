@@ -34,24 +34,24 @@ public class PickupCollect : MonoBehaviour
     {
         if(pickupAmount == 1)
         {
-            hud.texture = pickup1Tex;
+            hud.texture = pickup1tex;
             hud.enabled = true;
         }
         else if(pickupAmount == 2)
         {
-            hud.texture = pickup2Tex;
+            hud.texture = pickup2tex;
         }
         else if(pickupAmount == 3)
         {
-            hud.texture = pickup3Tex;
+            hud.texture = pickup3tex;
         }
         else if(pickupAmount == 4)
         {
-            hud.texture = pickup4Tex;
+            hud.texture = pickup4tex;
         }
         else
         {
-            hud.texture = pickup0Tex;
+            hud.texture = pickup0tex;
         }
     }
 }

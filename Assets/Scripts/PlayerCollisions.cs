@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerCollisions : MonoBehaviour
 {
+    // Battery sound
+    [SerializeField] AudioClip pickupCollectSound;
+    
     // Door Animator
     [SerializeField] private GameObject door; // An open slo in the Inspector to drag the hinge object into 
 
@@ -85,5 +88,18 @@ public class PlayerCollisions : MonoBehaviour
 
         // Set Animator parameters
         doorAnimator.SetBool("doorOpen", false);
+    }
+
+    // Pickup collision
+    void OnTriggerEnter (Collider coll)
+    {
+        if(coll.gameObject.CompareTag("pickup"))
+        {
+            PickupCollect.pickupAmount++;
+
+            audio.PlayOneShot(pickupCollectSound);
+
+            Destroy(coll.gameObject);
+        }
     }
 }
